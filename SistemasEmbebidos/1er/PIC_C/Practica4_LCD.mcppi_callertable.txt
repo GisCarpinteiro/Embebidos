@@ -1,0 +1,6 @@
+main
+	Keypad_Init
+	Keypad_Key_Click
+		Keypad_Key_Press
+			Delay_1us
+		Delay_10us

@@ -1,0 +1,42 @@
+[
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino"
+  },
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\variants\\mega"
+  },
+  {
+    "Sourcefile": "C:\\Users\\home\\Desktop\\Ceti\\Septimo\\SistemasEmbebidos\\2ndo\\Arduino\\sketch\\Practica7_Juego.ino.cpp",
+    "Include": "Keypad.h",
+    "Includepath": "C:\\Users\\home\\Documents\\Arduino\\libraries\\Keypad-master\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\home\\Desktop\\Ceti\\Septimo\\SistemasEmbebidos\\2ndo\\Arduino\\sketch\\Practica7_Juego.ino.cpp",
+    "Include": "LiquidCrystal.h",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\libraries\\LiquidCrystal\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\home\\Desktop\\Ceti\\Septimo\\SistemasEmbebidos\\2ndo\\Arduino\\sketch\\Practica7_Juego.ino.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\home\\Documents\\Arduino\\libraries\\Keypad-master\\src\\Key.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\home\\Documents\\Arduino\\libraries\\Keypad-master\\src\\Keypad.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\LiquidCrystal\\src\\LiquidCrystal.cpp",
+    "Include": "",
+    "Includepath": ""
+  }
+]

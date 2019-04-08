@@ -1,0 +1,36 @@
+lcd.setCursor(6, 1); //columna, filaa
+  lcd.write((byte) 0);
+  lcd.setCursor(7, 1); //columna, filaa
+  lcd.write((byte) 1);
+  delay(2000);
+  lcd.clear();
+  lcd.setCursor(8, 1); //columna, filaa
+  lcd.write((byte) 0);
+  lcd.setCursor(9, 1); //columna, filaa
+  lcd.write((byte) 1);
+   delay(2000);
+   lcd.clear();
+
+
+
+///////////////////////////////////////////////////////////////////
+mover y clear
+  lcd.setCursor(6, 1); //columna, filaa
+  lcd.write((byte) 0);
+  lcd.setCursor(7, 1); //columna, filaa
+  lcd.write((byte) 1);
+  delay(2000);
+  lcd.setCursor(6, 1); //columna, filaa
+  lcd.print(" ");
+  lcd.setCursor(7, 1); //columna, filaa
+   lcd.print(" ");
+  ////////////////////7
+  lcd.setCursor(8, 1); //columna, filaa
+  lcd.write((byte) 0);
+  lcd.setCursor(9, 1); //columna, filaa
+  lcd.write((byte) 1);
+   delay(2000);
+   lcd.setCursor(8, 1); //columna, filaa
+  lcd.print(" ");
+  lcd.setCursor(9, 1); //columna, filaa
+   lcd.print(" ");
