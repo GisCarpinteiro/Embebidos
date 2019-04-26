@@ -23,11 +23,11 @@ void setup() {
 void loop() {
  tecla = teclado.getKey();
  if (tecla != 0){
-  if(tecla==54){
+  
     lcd.setCursor(0, 0);
     lcd.print(tecla);
     
-    }
+    
     
   
  }

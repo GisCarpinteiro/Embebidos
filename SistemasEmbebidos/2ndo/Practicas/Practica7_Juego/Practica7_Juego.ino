@@ -9,7 +9,8 @@ int lados=0;
 byte pinesF[filas] = {53,51,49,47};
 byte pinesC[columnas] = {45,43,41,39};
 char tecla;
-int linea=0, detener=0;
+int linea=0, detener=0, cont1=0;
+int comer=0, presiono=0;
  
 char teclas[filas][columnas] = {
  
@@ -76,6 +77,39 @@ byte corazon[] = {
   B00000,
   B00000
 };
+
+byte comida[] = {
+  B00000,
+  B00000,
+  B01110,
+  B11111,
+  B01110,
+  B00000,
+  B00000,
+  B00000
+};
+
+byte hambre[] = {
+ B00000,
+  B00000,
+  B01010,
+  B00010,
+  B01010,
+  B01000,
+  B01010,
+  B00000
+};
+
+byte tumba[] = {
+  B00000,
+  B00100,
+  B01110,
+  B00100,
+  B00100,
+  B01110,
+  B00000,
+  B00000
+};
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -85,8 +119,13 @@ void setup() {
   lcd.createChar(2, kk);
   lcd.createChar(3, dormir);
   lcd.createChar(4, corazon);
-  lcd.setCursor(linea+2, 3);
+  lcd.createChar(5, comida);
+  lcd.createChar(6, hambre);
+  lcd.createChar(7, tumba);
+  lcd.setCursor(7, 3);
   lcd.write((byte) 4);
+  lcd.setCursor(9, 3);
+  lcd.write((byte) 5);
 }
 
 
@@ -115,6 +154,7 @@ void dormirse(){
         lcd.write((byte) 1);
         lcd.setCursor(7, 0); //Esto es cuando duerma
         lcd.write((byte) 3);
+       
         
   }
 
@@ -129,17 +169,46 @@ void despertarse(){
   
   }
 
-int m=6, actual=10000;
+  void izquierda(){
+        lcd.setCursor(5, 1);
+        lcd.write((byte) 6);
+    
+    }
 
-unsigned long timeA=0, timeB=60000;
-int ciclo=1000, ciclo1=120000;
+    
 
+int m=6, actual=10000, dormido=0;
+
+unsigned long timeA=0, timeA2=0, timeA3=0, timeA4=0, timeA0=0;
+unsigned int ciclo=1000, ciclo1=20000, ciclo2=58000, ciclo3=40000, ciclo4=50000, ciclo0=200;
+int cont = 0;
 
 void loop() {
-  tecla = teclado.getKey();
-   lcd.setCursor(0,0);
-   lcd.print(millis());
+  
+//   lcd.setCursor(0,0);
+//   lcd.print(millis());
+////////////////////////////////// TECLA /////////////////////////////////////////////////
+if(millis() > timeA0 + ciclo0){
+        timeA0 = millis();
+        tecla = teclado.getKey();
+        if(tecla == 68){
+           lcd.setCursor(10, 1);
+           lcd.print(" ");
+           presiono=1;
+          }
+
+        if(tecla==67){
+         
+            lcd.setCursor(5, 1);
+            lcd.print(" "); 
+            presiono=1;
+              
+            }
+    }
+
    
+
+/////////////////////////////CAMINAR/////////////////////////////////////////////////
   if(millis() > timeA + ciclo){
         timeA = millis();
       if(detener==0){
@@ -149,18 +218,62 @@ void loop() {
            m=6;
         }
     }
+
+//////////////////////////////DORMIRSE//////////////////////////////////////////////
+ if(millis()>timeA2+ciclo2){
+  timeA2= millis();
+  if(cont ==0){
+      detener = 1;
+      dormirse();
+      dormido=1;
+      cont++;
     
-  if(millis() > timeB + ciclo1){
-        timeA = millis();
-        dormirse();
     }
-  
-  
- 
+   else{
+      cont = 0;
+      dormido=0;
+      despertarse();
+      detener = 0;
     
-  
+    }
+  }
+/////////////////////////////////HACER KK///////////////////////////////////////////////////
+ if(millis()>timeA3+ciclo3){
+  timeA3= millis();
+  if(dormido==0){
+     lcd.setCursor(10, 1);
+     lcd.write((byte) 2);
+  }
+ }
+/////////////////////////////////////////Hambre//////////////////////////////////////////////////////
+ if(millis()>timeA4+ciclo4){
+  timeA4= millis();
+    if(dormido==0){
+      izquierda();
+      comer=1;
+    }
+    
+ }
+////////////////////////////////////////// Muerte /////////////////////////////////////////////
 
+if(millis()>=170000 && presiono==0){
+   detener=1;
   
+  //dormido=1;
+   lcd.setCursor(10, 1);
+   lcd.print(" "); 
+   lcd.setCursor(5, 1);
+   lcd.print(" "); 
+   lcd.setCursor(8, 1);
+   lcd.write((byte) 7);
+   lcd.setCursor(6, 1); //columna, filaa
+        lcd.print(" ");
+        lcd.setCursor(7, 1); //columna, filaa
+        lcd.print(" ");
+        lcd.setCursor(7, 0); //columna, filaa
+        lcd.print(" ");
+   
+ }
 
-  
+                      
 }
