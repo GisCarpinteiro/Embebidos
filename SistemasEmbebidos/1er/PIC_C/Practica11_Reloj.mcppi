@@ -52,7 +52,7 @@ File7=Port_Expander
 File8=SPI
 Count=9
 [EXPANDED_NODES]
-0=P5_Conversiones.mcppi
+0=Practica11_Reloj.mcppi
 Count=1
 [LIB_EXPANDED_NODES]
 0=mikroE Libraries
@@ -85,4 +85,4 @@ Count=1
 478=T6963C
 509=TouchPanel
 521=UART
-Count=30
+Count=31
