@@ -2,8 +2,6 @@
 #include <Wire.h>
 #include  <LiquidCrystal.h>
 LiquidCrystal lcd(28, 30, 32, 34, 36, 38);
-//String daysOfTheWeek[7] = { "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" };
-//String monthsNames[12] = { "Enero", "Febrero", "Marzo", "Abril", "Mayo",  "Junio", "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre" };
 RTC_DS1307 rtc;
 void setup() {
   Wire.begin();
@@ -14,7 +12,6 @@ void setup() {
       // Fijar a fecha y hora de compilacion
       rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
       
-      // Fijar a fecha y hora específica. En el ejemplo, 21 de Enero de 2016 a las 03:00:00
       
    }
 }
